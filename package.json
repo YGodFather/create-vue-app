@@ -1,0 +1,15 @@
+{
+  "name": "create-vue-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "create-vue-app": "index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "minimist": "^1.2.5"
+  }
+}
