@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, reactive } from "vue";
 
 const props = defineProps({
   name: {
@@ -17,14 +17,14 @@ const props = defineProps({
     default: () => ''
   }
 })
-const iconName = computed(() => `#icon-${props.name}`)
-const classNames = computed(() =>{
+const iconName = reactive(computed(() => `#icon-${props.name}`))
+const classNames = reactive(computed(() =>{
   return [
     'icon-svg',
     `icon-svg__${props.name}`,
     props.className && /\S/.test(props.className) ? `${props.className}` : ''
   ]
-})
+}))
 </script>
 <script>
 export default {

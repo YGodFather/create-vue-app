@@ -12,27 +12,32 @@ function resolve (dir) {
 export default defineConfig({
     resolve: {
         alias:{
-            '@': path.resolve(__dirname, "src")
+            '@': resolve("src")
         },
     },
     server: {
         fs: {
             strict: false
         },
-        proxy: {}
-    },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import '@/style/_var.scss';`,
-                charset: false
-            }
+        proxy: {
+
         }
     },
-    plugins: [vue(), viteCompression(),viteSvgIcons({
-        iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-        symbolId: 'icon-[name]'
-    })
+    // 预处理css 变量
+    css: {
+        preprocessorOptions: {
+            scss: {}
+        }
+    },
+    plugins: [
+        vue(),
+        viteCompression(),
+        viteSvgIcons(
+            {
+                iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+                symbolId: 'icon-[name]'
+            }
+        )
     ],
     build: {
         cssCodeSplit: true,
