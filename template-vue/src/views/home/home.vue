@@ -1,6 +1,6 @@
 <script setup>
   import {inject} from "vue";
-  const httpEnum = inject('$enum')
+  const httpEnum = inject('$Enum')
 
 </script>
 <template>

@@ -9,6 +9,3 @@
 ```bash
     npm run dev
 ```
-
-## 目录结构
-
